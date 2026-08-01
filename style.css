@@ -1,0 +1,343 @@
+/* ==========================================================================
+   RESET & ESTILOS BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none; /* Cursor personalizado */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #030308;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Cursor Personalizado */
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 182, 193, 0.8);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+}
+
+/* Barra de lectura */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3, #7873f5);
+    width: 0%;
+    z-index: 1000;
+    box-shadow: 0 0 10px #ff758c;
+}
+
+/* Canvas del universo */
+#space-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   LOADER INICIAL
+   ========================================================================== */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #030308;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.heart-pulse {
+    font-size: 4rem;
+    animation: heartBeat 1.2s infinite ease-in-out;
+}
+
+#loader p {
+    margin-top: 15px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    color: #ffb6c1;
+}
+
+/* ==========================================================================
+   BOTÓN DE MÚSICA & GLASSMORPHISM
+   ========================================================================== */
+.glass-btn {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 12px 24px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 182, 193, 0.6);
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+    transform: scale(1.05);
+}
+
+#music-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   GALERÍA FLOTANTE DE FOTOS
+   ========================================================================== */
+.floating-gallery-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.floating-photo {
+    position: absolute;
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    animation: floatAnimation 12s infinite ease-in-out;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0px) rotate(0deg) scale(0.95); }
+    50% { transform: translateY(-30px) rotate(4deg) scale(1.05); }
+    100% { transform: translateY(0px) rotate(0deg) scale(0.95); }
+}
+
+/* ==========================================================================
+   CONTENIDO Y TARJETA ROMÁNTICA
+   ========================================================================== */
+.main-container {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px 0 20px;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.glowing-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff758c, 0 0 20px #ff758c, 0 0 40px #ff7eb3;
+    animation: breathingText 3s infinite ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.glass-card {
+    background: rgba(15, 12, 41, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.typewriter-container p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #f3f3f3;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.typewriter-container p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.final-phrase {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 1.3rem !important;
+    color: #ffb6c1 !important;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   OVERLAY FINAL Y CORAZÓN DE PARTÍCULAS
+   ========================================================================== */
+#final-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    background: rgba(3, 3, 8, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 1.5s ease;
+}
+
+#heart-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.final-content {
+    position: relative;
+    z-index: 51;
+    text-align: center;
+}
+
+#final-message {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px #ff4b2b, 0 0 30px #ff416c;
+    margin-bottom: 30px;
+    animation: heartBeat 1.5s infinite;
+}
+
+.hidden {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ANIMACIONES KEYFRAMES Y RESPONSIVE
+   ========================================================================== */
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes breathingText {
+    0%, 100% { text-shadow: 0 0 10px #ff758c, 0 0 20px #ff758c; }
+    50% { text-shadow: 0 0 20px #ff7eb3, 0 0 40px #ff7eb3, 0 0 60px #7873f5; }
+}
+
+@media (max-width: 768px) {
+    .glowing-title { font-size: 2.5rem; }
+    .glass-card { padding: 25px 20px; }
+    .typewriter-container p { font-size: 1rem; }
+    .floating-photo { width: 120px; height: 150px; }
+    #final-message { font-size: 1.8rem; }
+}
+/* ==========================================================================
+   GALERÍA FLOTANTE DE FOTOS (MEJORADA Y VISIBLE)
+   ========================================================================== */
+.floating-gallery-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 2; /* Por encima del canvas del universo */
+}
+
+.floating-photo {
+    position: absolute;
+    width: 200px;  /* Mayor tamaño */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 18px;
+    /* Borde brillante y bien marcado */
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism más claro */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Resplandor luminoso más intenso */
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.7), 0 0 50px rgba(255, 105, 180, 0.3);
+    opacity: 0.9 !important; /* Totalmente visible por defecto */
+    transition: opacity 1s ease-in-out, transform 0.5s ease;
+    animation: floatAnimation 10s infinite ease-in-out;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0px) rotate(-3deg) scale(0.98); }
+    50% { transform: translateY(-25px) rotate(4deg) scale(1.03); }
+    100% { transform: translateY(0px) rotate(-3deg) scale(0.98); }
+}
+
+@media (max-width: 768px) {
+    .floating-photo { 
+        width: 130px; 
+        height: 160px;
+        opacity: 0.85 !important;
+    }
+}

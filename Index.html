@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Niña Hermosa ❤️✨</title>
+    
+    <!-- Meta Etiquetas SEO y Redes Sociales (Open Graph / WhatsApp) -->
+    <meta name="description" content="Un viaje por el universo dedicado al amor de mi vida.">
+    <meta property="og:title" content="Para el amor de mi vida ❤️">
+    <meta property="og:description" content="Un detalle especial hecho con todo mi corazón.">
+    <meta property="og:image" content="img/foto1.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon con un corazón -->
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    
+    <!-- Tipografía Elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loader Inicial -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="heart-pulse">❤️</div>
+            <p>Cargando nuestro universo...</p>
+        </div>
+    </div>
+
+    <!-- Cursor Personalizado -->
+    <div id="custom-cursor"></div>
+
+    <!-- Barra de Progreso de Lectura -->
+    <div id="progress-bar"></div>
+
+    <!-- Botón Control de Música -->
+    <button id="music-btn" class="glass-btn" aria-label="Controlar Música">
+        <span id="music-icon">🎵</span>
+    </button>
+    <audio id="bg-music" loop src="music.mp3"></audio>
+
+    <!-- Canvas para el Fondo Universo e Interacciones -->
+    <canvas id="space-canvas"></canvas>
+
+    <!-- Galería Flotante en el Universo (Glassmorphism) -->
+    <div id="floating-gallery" class="floating-gallery-container"></div>
+
+    <!-- Contenido Principal -->
+    <main class="main-container">
+        
+        <header class="hero-section">
+            <h1 class="glowing-title">Tamo ❤️</h1>
+            <p class="subtitle">Viajando por las estrellas a tu lado...</p>
+        </header>
+
+        <!-- Tarjeta de Cristal con Texto Romántico -->
+        <section class="glass-card">
+            <div class="typewriter-container">
+                <p class="tw-paragraph" data-text="Mi niña hermosa:"></p>
+                <p class="tw-paragraph" data-text="Quiero comenzar diciéndote que te amo con todo mi corazón. Sé que, a pesar de mis errores y de las veces en que no he sabido actuar de la mejor manera, siempre has permanecido a mi lado apoyándome en cada paso que doy. Gracias por nunca rendirte conmigo."></p>
+                <p class="tw-paragraph" data-text="Quiero pedirte perdón desde lo más profundo de mi corazón por cada momento en el que pude herir tus sentimientos o hacerte sentir triste. Jamás ha sido mi intención hacerte daño. Si alguna vez te hice sentir menos importante, menos querida o insuficiente, lo lamento con toda mi alma."></p>
+                <p class="tw-paragraph" data-text="Tú eres la única mujer que amo verdaderamente. Eres la persona con la que sueño compartir toda mi vida. No imagino un futuro en el que tú no estés conmigo."></p>
+                <p class="tw-paragraph" data-text="Mis sentimientos por ti son tan grandes que, algunas veces, no sé cómo expresarlos correctamente. Sé que cometo errores, pero cada día intento ser una mejor persona para ti porque realmente vales todo mi esfuerzo."></p>
+                <p class="tw-paragraph" data-text="Desde el día en que llegaste a mi vida, todo cambió por completo. Me enseñaste lo que significa amar de verdad, sentir tranquilidad al lado de alguien y encontrar felicidad incluso en los momentos más difíciles."></p>
+                <p class="tw-paragraph" data-text="Aunque muchas veces las circunstancias intenten separarnos, siempre encontraremos la manera de volver a estar juntos, porque nuestro amor siempre encontrará el camino."></p>
+                <p class="tw-paragraph" data-text="Eres lo más bonito que me ha pasado en la vida. Tener una mujer como tú es un regalo que agradezco todos los días. Contigo me siento feliz, amado, tranquilo, comprendido y completo."></p>
+                <p class="tw-paragraph" data-text="Gracias por cada abrazo, cada sonrisa, cada consejo, cada palabra bonita y cada momento que hemos compartido."></p>
+                <p class="tw-paragraph" data-text="Prometo seguir luchando por nosotros, aprender de mis errores y demostrarte todos los días cuánto te amo."></p>
+                <p class="tw-paragraph" data-text="Nunca olvides que eres el amor de mi vida y que siempre ocuparás el lugar más importante en mi corazón."></p>
+                <p class="tw-paragraph final-phrase" data-text="Te amo infinitamente, mi niña hermosa. ❤️✨"></p>
+            </div>
+        </section>
+
+        <div style="height: 300px;"></div> <!-- Espaciador para scroll -->
+    </main>
+
+    <!-- Overlay Final Explosión / Corazón -->
+    <div id="final-overlay" class="hidden">
+        <canvas id="heart-canvas"></canvas>
+        <div class="final-content">
+            <h2 id="final-message" class="hidden">TE AMO MUCHÍSIMO ❤️</h2>
+            <button id="restart-btn" class="glass-btn hidden">Volver a vivir este momento ❤️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
